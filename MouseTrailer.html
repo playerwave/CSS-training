@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="trailer">
+        <i id="trailer-icon" class="fa-solid fa-arrow-up-right"></i>
+    </div>
+    <div id="blur">
+        <h1 style="color: white;">Hello World</h1>
+        <div class="glassmorphism" style="margin-left: 300px;"></div>
+    </div>
+    <script>
+        const trailer = document.getElementById("trailer");
+        window.onmousemove = e => {
+            const x = e.clientX - trailer.offsetWidth / 2,
+            y = e.clientY - trailer.offsetHeight / 2;
+
+            const keyframes = {
+                transform:`translate(${x}px, ${y}px)`
+            }
+
+            trailer.animate(keyframes, {
+                duration: 800,
+                fill: "forwards"
+            });
+        };
+    </script>
+</body>
+<style>
+    body{
+        background-color: rgb(20, 20, 20);
+        height: 100vh;
+        margin: 0px;
+    }
+#trailer{
+    height: 700px;
+    width: 700px;
+    border-radius: 400px;
+
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+
+    pointer-events: none;
+    transition: opacity 500ms ease;
+
+    aspect-ratio: 0;
+        
+        background: linear-gradient(
+            to right,
+            blue,
+            red
+        );
+}
+
+#blur{
+    height: 100%;
+    width:100%;
+    position: absolute;
+    z-index: 2;
+    backdrop-filter: blur(300px);
+}
+
+body:hover > #trailer {
+    opacity: 1;
+}
+
+.glassmorphism{
+        width: 200px;
+        height: 300px;
+        border-top: 2px solid #FFFFFF75;
+        border-left: 2px solid #FFFFFF75;
+        box-shadow: 5px 5px 12px #00000035;
+        background: #FFFFFF25;
+        border-radius: 15px;
+        backdrop-filter: blur(4px);
+    }
+</style>
+</html>
