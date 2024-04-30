@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .btn {
+        height: 100px;
+        width: 200px;
+        background-color: red;
+        margin-top: 100px;
+        font-weight: bold;
+        font-size: 2rem;
+        color: white;
+
+        /*Transition*/
+        /* transition-property: transform;
+        transition-duration: 0.3s;
+        transition-timing-function: ease;
+        transition-delay: 0s; */
+
+        transition: transform 1s, background-color 0.3s, color 0.3s;
+      }
+
+      .btn:hover {
+        transform: translateY(-10px);
+        background-color: white;
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn">TESTING</button>
+  </body>
+</html>
